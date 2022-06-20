@@ -11,6 +11,18 @@ const book1 = new Book("1984", "George Orwell", "255", "Read");
 const book2 = new Book("It", "Stephen King", "1094 pages", "Not read");
 
 
+function formV() {
+    const form = document.getElementById('form');
+
+    if (form.style.display === 'none') {
+        // 👇️ this SHOWS the form
+        form.style.display = 'flexgit';
+    } else {
+        // 👇️ this HIDES the form
+        form.style.display = 'none';
+    }
+}
+
 console.log(book1.title);
 
 function addBookToLibrary() {

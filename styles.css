@@ -72,7 +72,7 @@
     cursor: pointer;
 }
 
-.float {
+.btn__add {
     position: fixed;
     width: 60px;
     height: 60px;
@@ -87,4 +87,33 @@
 
 .my-float {
     margin-top: 22px;
+}
+
+.form__container {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#form {
+    background-color: #EF9F9F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 25rem;
+    height: 10rem;
+}
+
+
+.form__container input {
+    background-color: #FAD4D4;
+    border: none;
+}
+
+.form__container label {
+    color: #FFF2F2;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
