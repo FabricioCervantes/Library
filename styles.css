@@ -18,7 +18,8 @@
 }
 
 .main {
-    height: 85vh;
+    min-height: 85vh;
+    height: 100%;
     background-color: #FAD4D4;
 }
 
@@ -27,7 +28,6 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-
 }
 
 .card {
@@ -38,7 +38,7 @@
     gap: 4rem;
     padding: 1rem;
     margin-top: 10vh;
-    height: 20rem;
+    height: 30rem;
     width: 16rem;
     background-color: #EF9F9F;
     border-radius: 4px;
@@ -90,30 +90,56 @@
 }
 
 .form__container {
-    padding-top: 2rem;
     display: flex;
     justify-content: center;
+
 }
 
 #form {
     background-color: #EF9F9F;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    text-align: center;
     padding: 20px;
     width: 25rem;
-    height: 10rem;
+    height: 25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 
 .form__container input {
     background-color: #FAD4D4;
     border: none;
+    text-align: center;
 }
 
 .form__container label {
     color: #FFF2F2;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+}
+
+.input__container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }
