@@ -55,9 +55,9 @@
 }
 
 .read__btn {
-    background: #b0a8b9;
+    background: #fff;
     height: 2rem;
-    width: 6rem;
+    width: 85%;
     font-size: 1.3rem;
     font-weight: bold;
     display: flex;
@@ -66,6 +66,11 @@
     border-radius: 6px;
     color: BLACK;
     padding: 0.5rem;
+}
+
+.delete__btn {
+    background-color: #EB5353;
+    color: white;
 }
 
 .read__btn:hover {
@@ -97,6 +102,7 @@
 
 #form {
     background-color: #EF9F9F;
+    border-radius: 6px;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -105,14 +111,26 @@
     padding: 20px;
     width: 25rem;
     height: 25rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
+.form__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    color: #FFF2F2;
+}
+
+.btn__close {
+    font-size: 1.25rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
 
 .form__container input {
     background-color: #FAD4D4;
@@ -131,6 +149,16 @@
     flex-direction: column;
 }
 
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

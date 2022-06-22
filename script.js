@@ -19,17 +19,10 @@ function addBookToLibrary() {
         const book1 = new Book(title, author, pages, "Not read");
         myLibrary.push(book1);
     }
-
-
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 }
 
 loadBooks();
-
-
-
-
-
 
 function deleteStorage() {
     window.localStorage.clear();
@@ -44,14 +37,12 @@ function loadBooks() {
         const bookReadBtn = document.createElement("div");
         const deleteBtn = document.createElement("div");
 
-
-
-
         bookCard.classList.add("card");
         bookCard.setAttribute("id", i);
         bookReadBtn.classList.add("read__btn");
         document.querySelector(".card__container").appendChild(bookCard);
         deleteBtn.classList.add("read__btn");
+        deleteBtn.classList.add("delete__btn");
 
         bookReadBtn.addEventListener("click", function() {
             changeReadStatus(i);
@@ -64,6 +55,9 @@ function loadBooks() {
         bookAuthor.textContent = myLibrary[i].author;
         bookPages.textContent = myLibrary[i].pages + " pages";
         bookReadBtn.textContent = myLibrary[i].readStatus;
+        if (myLibrary[i].readStatus == "Read") {
+            bookReadBtn.style.backgroundColor = "#B8F1B0";
+        }
         deleteBtn.textContent = "Delete";
 
         bookCard.appendChild(bookTitle);
@@ -94,12 +88,17 @@ function deleteBook(bookId) {
 
 function showForm() {
     const form = document.getElementById('form');
-
-    if (form.style.display === 'none') {
+    const overlay = document.getElementById('overlay');
+    if (!form.style.display || form.style.display === 'none') {
         // 👇️ this SHOWS the form
         form.style.display = 'flex';
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'all';
+
     } else {
         // 👇️ this HIDES the form
         form.style.display = 'none';
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
     }
 }
